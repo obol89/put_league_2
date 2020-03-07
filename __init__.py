@@ -1,6 +1,7 @@
 import itertools
 import random
 import csv
+import os.path
 
 
 def get_teams():
@@ -17,11 +18,16 @@ def get_team_pairs(teams):
     random.shuffle(pairs)
     return pairs
 
-def csv_export(pairs):
-    tournament = "/home/egnyte/tournament.csv"
-    with open(tournament, 'w', newline='') as tournament:
-        wr = csv.writer(tournament, quoting=csv.QUOTE_ALL)
-        wr.writerow(pairs)
+def csv_export(teams):
+    tournament_path = "~/tournament.csv"
+    full_tournament_path = os.path.expanduser(tournament_path)
+    #with open(tournament, 'w', newline='') as tournament:
+    #    wr = csv.writer(tournament, quoting=csv.QUOTE_ALL)
+    #    wr.writerow(pairs)
+    with open(full_tournament_path, 'w') as tournament:
+        wr = csv.writer(tournament)
+        for line in teams:
+            wr.writerow(line)
 
 
 # Teams input
