@@ -7,16 +7,23 @@ import os.path
 def get_teams():
     teams = []
     new_team = ''
-    while new_team != 'quit':
-        new_team = input("Please provide name of team that will participate in the tournament. If you have provided all teams please enter 'quit': ")
-        if new_team != 'quit':
-            teams.append(new_team)
+    while len(teams) != 16:
+        new_team = input("Please provide 16 names of teams that will participate in the tournament. Press eneter to confirm every name.")
+        teams.append(new_team)
+    print("You've provided 16 teams. Thank you.")
     return teams
 
 def get_team_pairs(teams):
     pairs = list(itertools.combinations(teams, 2))
     random.shuffle(pairs)
     return pairs
+
+def get_team_groups(teams, n):
+    n = 4
+    for i in range(0, len(teams), n):
+        val = teams[i:i+n]
+        if len(val) == n:
+            yield tuple(val)
 
 def csv_export(teams):
     tournament_path = "~/tournament.csv"
@@ -28,9 +35,3 @@ def csv_export(teams):
         wr = csv.writer(tournament)
         for line in teams:
             wr.writerow(line)
-
-
-# Teams input
-# Generate csv with fixture
-# Add manually results in csv file
-# Import csv and generate table with points and choose winner
