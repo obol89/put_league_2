@@ -2,19 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>PUT tournament</title>
     <link rel="stylesheet" href="static/css/main.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="static/jquery.fullpage.js"></script>
+    <script src="static/js/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="static/css/jquery.fullpage.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-</head>
   </head>
   <body>
       <div id="fullpage">
           <div class="section s1" data-anchor="site1">
             <h1>PUT LEAGUE</h1>
-            <h2>The best place to create tournamet</h2>
+            <h2>The best place to create tournament</h2>
               <div id="button1">
                 <a href="#site2"><button>Start</button></a>
               </div>
@@ -39,21 +38,23 @@
               </div>
               <div class="slide s3" data-anchor="site3">
                 <h2>Enter names of the teams:
-                    <form action="{{ url_for('my_form_post') }}" method="post">
-                        <input type="text" name="team_name">
-                        <input type="submit">
+                    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                      <div class="team-add-button">
+                        <input type="text" name="teamName" id="teamName">
+                        <input type="submit" value="Add team">
+                      </div>
                     </form>
                 </h2>
-                  <table>
+                  <table class="list" id="allTeams">
+                    <thead>
                     <tr>
-                      <td>{{ processed_text }}</td>
+                      <th>Team name</th>
+                      <th></th>
                     </tr>
-                    <tr>
-                      <td>TEAM 2</td>
-                    </tr>
-                    <tr>
-                      <td>TEAM 3</td>
-                    </tr>
+                  </thead>
+                    <tbody>
+
+                   </tbody>
                   </table>
                   <div id="button1">
                     <a href="#site2/site4"><button>Next</button></a>
@@ -72,5 +73,6 @@
             controlArrows: false,
         })
       </script>
+      <script src="static/js/table.js"></script>
   </body>
 </html>
