@@ -1,7 +1,7 @@
-var selectedRow = null
+let selectedRow = null
 
 function onFormSubmit() {
-        var formData = readFormData();
+        let formData = readFormData();
         if (selectedRow == null)
             insertNewRecord(formData);
         else
@@ -11,14 +11,14 @@ function onFormSubmit() {
 
 
 function readFormData() {
-    var formData = {};
+    let formData = [];
     formData["teamName"] = document.getElementById("teamName").value;
     return formData;
 }
 
 function insertNewRecord(data) {
-    var table = document.getElementById("allTeams").getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow(table.length);
+    let table = document.getElementById("allTeams").getElementsByTagName('tbody')[0];
+    let newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
     cell1.innerHTML = data.teamName;
     cell2 = newRow.insertCell(1);
@@ -59,10 +59,26 @@ function validate() {
     }
     return isValid;
 }
+let tableInfo = Array.prototype.map.call(document.querySelectorAll('#allTeams tr'), function(tr){
+  return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
+    return td.innerHTML;
+    });
+  });
+
+
+
 */
-$.post( "/postmethod", {
-  canvas_data: JSON.stringify(formData)
-}, function(err, req, resp){
-  window.location.href = "/results/"+resp["responseJSON"]["uuid"];
+
+$('#button3').click( function() {
+  var arr = [];
+$("#allTeams tr").each(function(){
+    arr.push($(this).find("td:first").text());
 });
-}
+
+    var myJsonString = JSON.stringify(arr);
+    $.ajax({
+      type: 'POST',
+      data: {'teams': myJsonString},
+    });
+    console.log(myJsonString)
+  });

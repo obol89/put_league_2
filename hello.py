@@ -1,4 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
+import ast
+import json
 
 app = Flask(__name__)
 
@@ -9,9 +11,12 @@ def my_form():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    text = request.form['team_name']
-    processed_text = text.upper()
-
+    data = request.form.getlist('teams')
+    data = data[0]
+    data = ast.literal_eval(data)
+    data.pop(0)
+    print(data)
+    return jsonify(result={"status": 200})
 
 if __name__ == '__main__':
     app.run(debug=True)
