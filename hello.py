@@ -51,6 +51,9 @@ def team_sender():
     # teams_db.session.add(put_team)
     # teams_db.session.commit()
 
+    # from . import db
+    # db.init_app(app)
+
     return render_template('index.html', data=set_team)
 
 
