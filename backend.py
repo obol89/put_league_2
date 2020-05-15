@@ -24,6 +24,7 @@ def get_team_pairs(teams):
 
 def get_team_groups(teams, n):
     n = 4
+    random.shuffle(teams)
     for i in range(0, len(teams), n):
         val = teams[i:i+n]
         if len(val) == n:
