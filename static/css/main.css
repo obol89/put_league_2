@@ -20,9 +20,20 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+
+#button3 {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .table1 {
+  font-family: 'Poppins', sans-serif;
   border-collapse:collapse;
   margin: 0px auto;
+  color: white;
 }
 
 #sport_disciplines {
