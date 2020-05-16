@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, jsonify
-from flask_sqlalchemy import SQLAlchemy
 import backend
 import ast
 import json
@@ -30,26 +29,18 @@ def my_form_post():
     teams = ast.literal_eval(teams)
     teams.pop(0)
     put_team.push(teams)
-    #put_team = User(name = teams)
-    #teams_db.session.add(put_team)
-    #teams_db.session.commit()
 
     return jsonify(result={'status': 200})
 
 
-@app.route('/a', methods=['GET'])
+@app.route('/_update', methods=['GET'])
 def team_sender():
     set_team = put_team.stack[0]
     put_team.reset()
     groups = [team for team in backend.get_team_groups(set_team,4)]
     print(groups)
 
-    #put_team = User(name = teams)
-    #teams_db.session.add(put_team)
-    #teams_db.session.commit()
-
-    return render_template('index.html', data=set_team)
-
+    return jsonify(groups=groups)
 
 
 if __name__ == '__main__':
