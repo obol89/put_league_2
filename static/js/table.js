@@ -46,39 +46,25 @@ function onDelete(td) {
         resetForm();
     }
 }
-/*
-function validate() {
-    isValid = true;
-    if (document.getElementById("teamName").value == "") {
-        isValid = false;
-        document.getElementById("fullNameValidationError").classList.remove("hide");
-    } else {
-        isValid = true;
-        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
-            document.getElementById("fullNameValidationError").classList.add("hide");
-    }
-    return isValid;
-}
-let tableInfo = Array.prototype.map.call(document.querySelectorAll('#allTeams tr'), function(tr){
-  return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
-    return td.innerHTML;
-    });
-  });
-
-
-
-*/
 
 $('#button3').click( function() {
   var arr = [];
-$("#allTeams tr").each(function(){
-    arr.push($(this).find("td:first").text());
-});
-
-    var myJsonString = JSON.stringify(arr);
-    $.ajax({
-      type: 'POST',
-      data: {'teams': myJsonString},
-    });
-    console.log(myJsonString)
+  $("#allTeams tr").each(function(){
+      arr.push($(this).find("td:first").text());
   });
+      var myJsonString = JSON.stringify(arr);
+      $.ajax({
+        type: 'POST',
+        data: {'teams': myJsonString},
+      });
+      console.log(myJsonString)
+    });
+
+$('#generate').click( function() {
+  function update_values() {
+            $.getJSON("/_update",
+                function(data) {
+                    $("#teams_groups").text(data.groups)
+                });
+              }
+            });
