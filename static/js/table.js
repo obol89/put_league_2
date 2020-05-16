@@ -60,11 +60,11 @@ $('#button3').click( function() {
       console.log(myJsonString)
     });
 
+/*
 $('#generate').click( function() {
-  function update_values() {
-            $.getJSON("/_update",
+            $.getJSON("/update",
                 function(data) {
                     $("#teams_groups").text(data.groups)
                 });
-              }
             });
+*/
