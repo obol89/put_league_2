@@ -3,95 +3,100 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="static/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="static/js/jquery.fullpage.js"></script>
+    <link rel="stylesheet" href="static/css/jquery.fullpage.css">
     <title>Generated groups</title>
   </head>
   <body>
-    <div class='s5'>
-    <h1>Thank you. Yours groups:</h1>
-      <table class='table2' id="groupA">
-        <thead>
-          <tr>
-            <th>Group A</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[0][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[0][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[0][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[0][3] }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class='table2' id="groupB">
-        <thead>
-          <tr>
-            <th>Group B</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[1][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[1][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[1][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[1][3] }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class='table3' id="groupC">
-        <thead>
-          <tr>
-            <th>Group C</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[2][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[2][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[2][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[2][3] }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class='table3' id="groupD">
-        <thead>
-          <tr>
-            <th>Group D</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[3][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[3][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[3][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[3][3] }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div >
+    <div id="fullpage"></div>
+      <div class='slide s5'>
+      <h1>Thank you. Your groups:</h1>
+        <table class='table2' id="groupA">
+          <thead>
+            <tr>
+              <th>Group A</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ groups[0][0] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[0][1] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[0][2] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[0][3] }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class='table2' id="groupB">
+          <thead>
+            <tr>
+              <th>Group B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ groups[1][0] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[1][1] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[1][2] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[1][3] }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class='table2' id="groupC">
+          <thead>
+            <tr>
+              <th>Group C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ groups[2][0] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[2][1] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[2][2] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[2][3] }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class='table2' id="groupD">
+          <thead>
+            <tr>
+              <th>Group D</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ groups[3][0] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[3][1] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[3][2] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[3][3] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div >
+    </div>
   </body>
 </html>

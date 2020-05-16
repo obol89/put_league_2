@@ -39,9 +39,11 @@ h2 {
 .table2 {
   font-family: 'Poppins', sans-serif;
   border-collapse:collapse;
-  margin: 0px auto;
+  /* margin: 0px auto; */
   color: white;
-  float: left;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table3 {
@@ -49,7 +51,7 @@ h2 {
   border-collapse:collapse;
   margin: 0px auto;
   color: white;
-  float: right;
+  display: inline-block;
 }
 
 
@@ -79,5 +81,5 @@ h2 {
 
 .s5 {
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/game.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
 }
