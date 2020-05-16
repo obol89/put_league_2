@@ -21,8 +21,10 @@ h2 {
   justify-content: center;
 }
 .table1 {
+  font-family: 'Poppins', sans-serif;
   border-collapse:collapse;
   margin: 0px auto;
+  color: white;
 }
 
 #sport_disciplines {
