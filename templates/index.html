@@ -40,7 +40,7 @@
                 <h2>Enter names of the teams:
                     <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                       <div class="team-add-button">
-                        <input type="text" name="teamName" id="teamName">
+                        <input type="text" name="teamName" id="teamName" pattern="[A-Za-z]{12}">
                         <input type="submit" value="Add team">
                       </div>
                     </form>
