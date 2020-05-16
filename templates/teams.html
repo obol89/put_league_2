@@ -1,29 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/main.css">
     <title>Generated groups</title>
   </head>
   <body>
-    <h1>Thank you. Yours groups:    </h1>
-
-      <br>{{ groups[0][0] }}</br>
-      <br>{{ groups[0][1] }}</br>
-      <br>{{ groups[0][2] }}</br>
-      <br>{{ groups[0][3] }}</br>
-      <br>{{ groups[1][0] }}</br>
-      <br>{{ groups[1][1] }}</br>
-      <br>{{ groups[1][2] }}</br>
-      <br>{{ groups[1][3] }}</br>
-      <br>{{ groups[2][0] }}</br>
-      <br>{{ groups[2][1] }}</br>
-      <br>{{ groups[2][2] }}</br>
-      <br>{{ groups[2][3] }}</br>
-      <br>{{ groups[3][0] }}</br>
-      <br>{{ groups[3][1] }}</br>
-      <br>{{ groups[3][2] }}</br>
-      <br>{{ groups[3][3] }}</br>
-      
+    <div class='s5'>
+    <h1>Thank you. Yours groups:</h1>
+      <table class='table2' id="groupA">
+        <thead>
+          <tr>
+            <th>Group A</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[0][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[0][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[0][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[0][3] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class='table2' id="groupB">
+        <thead>
+          <tr>
+            <th>Group B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[1][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[1][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[1][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[1][3] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class='table3' id="groupC">
+        <thead>
+          <tr>
+            <th>Group C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[2][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[2][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[2][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[2][3] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class='table3' id="groupD">
+        <thead>
+          <tr>
+            <th>Group D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[3][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[3][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[3][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[3][3] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div >
   </body>
 </html>
