@@ -3,27 +3,110 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/tables.css">
     <title>Generated groups</title>
   </head>
   <body>
+    <div class='teamsPage'>
     <h1>Thank you. Yours groups:    </h1>
-
-      <br>{{ groups[0][0] }}</br>
-      <br>{{ groups[0][1] }}</br>
-      <br>{{ groups[0][2] }}</br>
-      <br>{{ groups[0][3] }}</br>
-      <br>{{ groups[1][0] }}</br>
-      <br>{{ groups[1][1] }}</br>
-      <br>{{ groups[1][2] }}</br>
-      <br>{{ groups[1][3] }}</br>
-      <br>{{ groups[2][0] }}</br>
-      <br>{{ groups[2][1] }}</br>
-      <br>{{ groups[2][2] }}</br>
-      <br>{{ groups[2][3] }}</br>
-      <br>{{ groups[3][0] }}</br>
-      <br>{{ groups[3][1] }}</br>
-      <br>{{ groups[3][2] }}</br>
-      <br>{{ groups[3][3] }}</br>
-      
+    <table class='fullTab'>
+      <tr>
+        <td>
+          <table class='flex1'>
+          <thead>
+            <tr>
+              <th>Group A</th>
+            </tr>
+          </thead>
+          <tbody class='bodyTab'>
+            <tr>
+              <td>{{ groups[0][0] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[0][1] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[0][2] }}</td>
+            </tr>
+            <tr>
+              <td>{{ groups[0][3] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+      <table class='flex2'>
+        <thead>
+          <tr>
+            <th>Group B</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[1][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[1][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[1][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[1][3] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    </tr>
+    <tr>
+      <td>
+      <table class='flex3'>
+        <thead>
+          <tr>
+            <th>Group C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[2][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[2][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[2][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[2][3] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+      <td>
+      <table class='flex4'>
+        <thead>
+          <tr>
+            <th>Group D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ groups[3][0] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[3][1] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[3][2] }}</td>
+          </tr>
+          <tr>
+            <td>{{ groups[3][3] }}</td>
+          </tr>
+        </td>
+      </tr>
+        </tbody>
+      </table>
+    </table>
+    </div >
   </body>
 </html>

@@ -1,0 +1,49 @@
+html {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/team.jpg);
+  background-size: cover;
+}
+
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 82px;
+  text-align: center;
+  color: white;
+}
+
+.fullTab {
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    }
+
+
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+th, td {
+  padding: 15px;
+}
+
+.flex1 {
+  order: 1;
+  align-self:
+}
+
+.flex2 {
+  order: 2;
+}
+
+.flex3 {
+  order: 3;
+}
+
+.flex4 {
+  order: 4;
+}
