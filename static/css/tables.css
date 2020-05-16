@@ -1,5 +1,5 @@
 html {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/team.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/game.jpg);
   background-size: cover;
 }
 
@@ -17,7 +17,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
     margin-left: auto;
     margin-right: auto;
-    background: white;
+    color: white;
     }
 
 
@@ -33,7 +33,7 @@ th, td {
 
 .flex1 {
   order: 1;
-  align-self:
+  align-self: stretch;
 }
 
 .flex2 {
