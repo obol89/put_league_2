@@ -33,12 +33,11 @@ def my_form_post():
     return jsonify(result={'status': 200})
 
 
-@app.route('/teams', methods=['GET'])
+@app.route('/teams')
 def team_sender():
     set_team = put_team.stack[0]
     put_team.reset()
     groups = [team for team in backend.get_team_groups(set_team,4)]
-    print(groups)
 
     return render_template('teams.html', groups=groups)
 
