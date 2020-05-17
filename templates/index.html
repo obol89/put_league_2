@@ -13,7 +13,7 @@
   <body>
       <div id="fullpage">
           <div class="section s1" data-anchor="site1">
-            <h1>PUT LEAGUE</h1>
+            <h1>Welcome to PUT LEAGUE</h1>
             <h2>The best place to create a tournament</h2>
             <div class="language">
               <select name="slct" id="slct" class="slct">
@@ -39,13 +39,18 @@
                   <select id = "teams_number">
                     <option value = "sixteen">16</option>
                   </select>
-                  </h2>
+                </h2>
+                <h2>Select division into groups:
+                  <select id = "groups_division">
+                    <option value = "4x4">4x4</option>
+                  </select>
+                </h2>
                   <div id="button1">
                     <a href="#site2/site3" class="button4">Next</a>
                   </div>
               </div>
               <div class="slide s3" data-anchor="site3">
-                <h2>Enter names of the teams:
+                <h2>Enter team names:
                     <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                     <label id="teamNameError"></label>
                       <div class="team-add-button">
