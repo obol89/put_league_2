@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template, jsonify
 import backend
 import ast
-import json
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 
 class Storage(object):
     def __init__(self):
@@ -15,7 +16,9 @@ class Storage(object):
     def reset(self):
         self.stack = []
 
+
 put_team = Storage()
+
 
 @app.route('/')
 def my_form():
@@ -37,7 +40,7 @@ def my_form_post():
 def team_sender():
     set_team = put_team.stack[0]
     put_team.reset()
-    groups = [team for team in backend.get_team_groups(set_team,4)]
+    groups = [team for team in backend.get_team_groups(set_team, 4)]
 
     return render_template('teams.html', groups=groups)
 
