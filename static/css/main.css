@@ -121,3 +121,59 @@ h2 {
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/foot.jpg);
   background-size: cover;
 }
+#slct {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #31373d;
+  background-image: none;
+  display: inline-block;
+
+}
+/* Remove IE arrow */
+#slct::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.language {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  width: 6em;
+  height: 3em;
+  line-height: 3;
+  background: #31373d;
+  overflow: hidden;
+  border-radius: .25em;
+  outline: none;
+}
+#slct {
+  position: initial;
+  flex: 1;
+  padding: 0 1.5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.language::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #3d444a;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.language:hover::after {
+  color: #3498DB;
+}
