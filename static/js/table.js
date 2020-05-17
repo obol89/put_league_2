@@ -1,6 +1,7 @@
 let selectedRow = null
 
 function onFormSubmit() {
+      if (validate()) {
         let formData = readFormData();
         if (selectedRow == null)
             insertNewRecord(formData);
@@ -8,6 +9,7 @@ function onFormSubmit() {
             updateRecord(formData);
         resetForm();
     }
+  }
 
 
 function readFormData() {
@@ -46,6 +48,24 @@ function onDelete(td) {
         resetForm();
     }
 }
+
+function validate() {
+    isValid = true;
+    if (document.getElementById("teamName").value == "") {
+        isValid = false;
+        document.getElementById("teamNameError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("teamNameError").classList.contains("hide"))
+            document.getElementById("teamNameError").classList.add("hide");
+    }
+    return isValid;
+}
+let tableInfo = Array.prototype.map.call(document.querySelectorAll('#allTeams tr'), function(tr){
+  return Array.prototype.map.call(tr.querySelectorAll('td'), function(td){
+    return td.innerHTML;
+    });
+  });
 
 $('#button3').click( function() {
   var arr = [];
