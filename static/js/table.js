@@ -53,12 +53,7 @@ function validate() {
     isValid = true;
     if (document.getElementById("teamName").value == "") {
         isValid = false;
-        document.getElementById("teamNameError").classList.remove("hide");
-    } else {
-        isValid = true;
-        if (!document.getElementById("teamNameError").classList.contains("hide"))
-            document.getElementById("teamNameError").classList.add("hide");
-    }
+    } 
     return isValid;
 }
 let tableInfo = Array.prototype.map.call(document.querySelectorAll('#allTeams tr'), function(tr){
