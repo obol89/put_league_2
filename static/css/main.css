@@ -37,13 +37,13 @@ h2 {
   justify-content: center;
 }
 
-/* #button3 {
+#button3 {
   width: 100%;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-} */
+}
 
 .button4 {
   background: #3D94F6;
@@ -85,13 +85,13 @@ h2 {
   text-decoration: none;
 }
 
-.button4-center {
+/* .button4-center {
   position: absolute;
   right: 49%;
   top: 80%;
   float: none;
   display: flex;
-}
+} */
 
 .input1 {
   height: 45px;
@@ -102,6 +102,7 @@ h2 {
   border-collapse:collapse;
   margin: 0px auto;
   color: white;
+  cursor: pointer;
 }
 
 #sport_disciplines {
