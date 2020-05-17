@@ -47,6 +47,7 @@
               <div class="slide s3" data-anchor="site3">
                 <h2>Enter names of the teams:
                     <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <label id="teamNameError"></label>
                       <div class="team-add-button">
                         <input class="input1" type="text" name="teamName" id="teamName" pattern="[A-Za-z]{1,12}" title="Only up to 12 a-z or A-Z characters allowed">
                         <input type="submit" class="button4" value="Add team">
