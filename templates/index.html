@@ -5,6 +5,7 @@
     <title>PUT tournament</title>
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/jquery.fullpage.css">
+    <!-- <link rel="stylesheet" href="static/css/buttons.css"> -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="static/js/jquery.fullpage.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -15,7 +16,7 @@
             <h1>PUT LEAGUE</h1>
             <h2>The best place to create a tournament</h2>
               <div id="button1">
-                <a href="#site2"><button>Start</button></a>
+                <a href="#site2" class="button4">Start</a>
               </div>
             </div>
           <div class="section" data-anchor="site2">
@@ -33,15 +34,15 @@
                   </select>
                   </h2>
                   <div id="button1">
-                    <a href="#site2/site3"><button>Next</button></a>
+                    <a href="#site2/site3" class="button4">Next</a>
                   </div>
               </div>
               <div class="slide s3" data-anchor="site3">
                 <h2>Enter names of the teams:
                     <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                       <div class="team-add-button">
-                        <input type="text" name="teamName" id="teamName" pattern="[A-Za-z]{1,12}" title="Only up to 12 a-z or A-Z characters allowed">
-                        <input type="submit" value="Add team">
+                        <input class="input1" type="text" name="teamName" id="teamName" pattern="[A-Za-z]{1,12}" title="Only up to 12 a-z or A-Z characters allowed">
+                        <input type="submit" class="button4" value="Add team">
                       </div>
                     </form>
                 </h2>
@@ -57,7 +58,7 @@
                    </tbody>
                   </table>
                   <div id="button3">
-                    <a href="teams"><button>Split into groups</button></a>
+                    <a href="teams" class="button4 button4-center">Split into groups</a>
                   </div>
               </div>
               <div class="slide s4" data-anchor="site4">
