@@ -18,13 +18,20 @@ function readFormData() {
     return formData;
 }
 
+// function incrementNumber() {
+    // document.getElementById("incNum").stepUp();
+// }
+
 function insertNewRecord(data) {
-    let table = document.getElementById("allTeams").getElementsByTagName('tbody')[0];
+    a = 0;
+    let table = document.getElementById("allTeams").getElementsByTagName('tbody')[];
     let newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
-    cell1.innerHTML = data.teamName;
+    // cell1 = newRow.insertCell(0);
+    // cell1 = innerHTML = incrementNumber();
     cell2 = newRow.insertCell(1);
-    cell2.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+    cell2.innerHTML = data.teamName;
+    cell3 = newRow.insertCell(2);
+    cell3.innerHTML = `<a onClick="onEdit(this)">Edit</a>
                        <a onClick="onDelete(this)">Delete</a>`;
 }
 
@@ -53,7 +60,7 @@ function validate() {
     isValid = true;
     if (document.getElementById("teamName").value == "") {
         isValid = false;
-    } 
+    }
     return isValid;
 }
 let tableInfo = Array.prototype.map.call(document.querySelectorAll('#allTeams tr'), function(tr){
