@@ -105,9 +105,17 @@ h2 {
   cursor: pointer;
 }
 
-#sport_disciplines {
-  justify-content: center;
+#sport_disciplines, #teams_number, #groups_division {
+  vertical-align: middle;
+  width: 10em;
+  height: 3em;
+  line-height: 3;
+  background: white;
+  overflow: hidden;
+  border-radius: .25em;
+  outline: none;
 }
+
 
 .s1 {
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/home.jpg);
