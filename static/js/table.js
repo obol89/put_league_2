@@ -65,16 +65,16 @@ function validate() {
 
 
 $('#button3').click( function() {
-  var arr = [];
+  let arr = [];
   $("#allTeams tr").each(function(){
-      arr.push($(this).find("td:first").text());
+      arr.push($(this).find("td:eq(1)").text());
   });
-      var myJsonString = JSON.stringify(arr);
+      let myJsonString = JSON.stringify(arr);
       $.ajax({
         type: 'POST',
         data: {'teams': myJsonString},
       });
-      console.log(myJsonString)
+      console.log(arr.push($(this).find("td:second").text()))
     });
 
 /*
