@@ -74,7 +74,6 @@ $('#button3').click( function() {
         type: 'POST',
         data: {'teams': myJsonString},
       });
-      console.log(arr.push($(this).find("td:second").text()))
     });
 
 /*
