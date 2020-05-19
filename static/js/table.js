@@ -57,17 +57,31 @@ function onDelete(td) {
 
 function validate() {
     isValid = true;
-    if (document.getElementById("teamName").value == "") {
+    let teamsColumn = $("#allTeams tr").find("td:eq(1)");
+    let teamValues = [];
+    $.each(teamsColumn, function(key, el){
+         teamValues.push($(el).text());
+    });
+    let enteredTeam = document.getElementById("teamName").value;
+    if (enteredTeam == "") {
         isValid = false;
     } else if (document.getElementById("allTeams").getElementsByTagName('tbody')[0].rows.length==16) {
       isValid = false;
       alert('Table is full.');
+    } else if (teamValues.includes(enteredTeam)) {
+      isValid = false;
+      alert('Team was added. Please enter another name.');
+      resetForm();
     }
     return isValid;
 }
 
 
 $('#button3').click( function() {
+  if (document.getElementById("allTeams").getElementsByTagName('tbody')[0].rows.length<16) {
+    alert('Please enter correct number of teams.');
+    event.preventDefault();
+  } else {
   let arr = [];
   $("#allTeams tr").each(function(){
       arr.push($(this).find("td:eq(1)").text());
@@ -77,7 +91,7 @@ $('#button3').click( function() {
         type: 'POST',
         data: {'teams': myJsonString},
       });
-    });
+    }});
 
 /*
 $('#generate').click( function() {
