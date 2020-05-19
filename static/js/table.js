@@ -59,6 +59,9 @@ function validate() {
     isValid = true;
     if (document.getElementById("teamName").value == "") {
         isValid = false;
+    } else if (document.getElementById("allTeams").getElementsByTagName('tbody')[0].rows.length==16) {
+      isValid = false;
+      alert('Table is full.');
     }
     return isValid;
 }
