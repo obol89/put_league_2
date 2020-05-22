@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, Response
+import pandas as pd
 import backend
 import ast
 
@@ -41,8 +42,23 @@ def team_sender():
     set_team = put_team.stack[0]
     put_team.reset()
     groups = [team for team in backend.get_team_groups(set_team, 4)]
+    put_team.push(groups)
 
     return render_template('teams.html', groups=groups)
+
+@app.route('/end')
+def get_csv():
+    return render_template('end.html')
+
+@app.route('/summary')
+def get_structure():
+    csv_groups = put_team.stack[0]
+    put_team.reset()
+    excel = backend.csv_data(csv_groups)
+    excel = backend.get_data_structure(excel)
+
+    return Response(excel.to_csv(index=False, header=False), 
+    mimetype="text/csv", headers={"Content-disposition": "attachment; filename=PUT-table_group.csv"})
 
 
 if __name__ == '__main__':
