@@ -2,6 +2,8 @@ import itertools
 import random
 import csv
 import os.path
+import pandas as pd
+import string
 
 
 #def get_teams():
@@ -41,3 +43,31 @@ def csv_export(teams):
         wr = csv.writer(tournament)
         for line in teams:
             wr.writerow(line)
+
+
+def csv_data(teams):
+    columns = []
+    number_of_groups = len(teams)
+    for i in range(number_of_groups):
+        columns.append('Group_' + list(string.ascii_uppercase)[i])
+    data = pd.DataFrame(columns=columns)
+    for group, column in zip(teams, data):
+        data[column] = group
+        
+    return data
+
+def get_data_structure(data):
+    data.loc[-1] = data.columns 
+    data.index = data.index + 1 
+    data.sort_index(inplace=True) 
+    data = pd.Series(data.values.ravel('F'))
+    first_phase = ['','','','','','A1', 'B2','', 'B1', 'A2','', 'C1', 'D2','', 'D1', 'C2','','','','']
+    second_phase = ['','','','','','','','','Semifinasls','','','','Semifinasls','','','','','','','']
+    final = ['','','','','','','','','','','Final','','','','','','','','','']
+    excel = pd.DataFrame({'Groups':data, '1/8':first_phase, '1/4':second_phase,  'final':final})
+
+    return excel
+
+
+
+
