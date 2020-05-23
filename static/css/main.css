@@ -188,3 +188,25 @@ h2 {
 .language:hover::after {
   color: #3498DB;
 }
+
+#toSite2 {
+  position: relative;
+  left: -30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#Split {
+  position: relative;
+  left: 30px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+#button5 {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -7,108 +7,125 @@
     <title>Generated groups</title>
   </head>
   <body>
-    <div class='teamsPage'>
-    <h1>Your groups:    </h1>
-    <table class='fullTab'>
-      <tr>
-        <td>
-          <table class='flex1'>
-          <thead>
+    <div class="container" id="blur">
+      <div class="content">
+        <div class='teamsPage'>
+          <h1>Your groups:    </h1>
+          <table class='fullTab'>
             <tr>
-              <th>Group A</th>
+              <td>
+                <table class='flex1'>
+                <thead>
+                  <tr>
+                    <th>Group A</th>
+                  </tr>
+                </thead>
+                <tbody class='bodyTab'>
+                  <tr>
+                    <td>{{ groups[0][0] }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ groups[0][1] }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ groups[0][2] }}</td>
+                  </tr>
+                  <tr>
+                    <td>{{ groups[0][3] }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td>
+            <table class='flex2'>
+              <thead>
+                <tr>
+                  <th>Group B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ groups[1][0] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[1][1] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[1][2] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[1][3] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          </tr>
+          <tr>
+            <td>
+            <table class='flex3'>
+              <thead>
+                <tr>
+                  <th>Group C</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ groups[2][0] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[2][1] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[2][2] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[2][3] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+            <td>
+            <table class='flex4'>
+              <thead>
+                <tr>
+                  <th>Group D</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ groups[3][0] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[3][1] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[3][2] }}</td>
+                </tr>
+                <tr>
+                  <td>{{ groups[3][3] }}</td>
+                </tr>
+              </td>
             </tr>
-          </thead>
-          <tbody class='bodyTab'>
-            <tr>
-              <td>{{ groups[0][0] }}</td>
-            </tr>
-            <tr>
-              <td>{{ groups[0][1] }}</td>
-            </tr>
-            <tr>
-              <td>{{ groups[0][2] }}</td>
-            </tr>
-            <tr>
-              <td>{{ groups[0][3] }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-      <td>
-      <table class='flex2'>
-        <thead>
-          <tr>
-            <th>Group B</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[1][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[1][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[1][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[1][3] }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-    </tr>
-    <tr>
-      <td>
-      <table class='flex3'>
-        <thead>
-          <tr>
-            <th>Group C</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[2][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[2][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[2][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[2][3] }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </td>
-      <td>
-      <table class='flex4'>
-        <thead>
-          <tr>
-            <th>Group D</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ groups[3][0] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[3][1] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[3][2] }}</td>
-          </tr>
-          <tr>
-            <td>{{ groups[3][3] }}</td>
-          </tr>
-        </td>
-      </tr>
-        </tbody>
-      </table>
-    </table>
-    </div >
-    <a href="/end"><button>Next</button></a>
-
+              </tbody>
+            </table>
+          </table>
+          </div >
+          <a href="#" onclick="toggle();">More</a>
+      </div>
+    </div>
+    <div id="popup">
+      <p><a href="/summary" target="blank"><button class="button4">Get Excel</button></a></p>
+      <p><a href="/"><button class="button4">Home</button></a></p>
+      <a href="#" onclick="toggle();"><button>Close</button></a>
+    </div>
+    <script type="text/javascript">
+      function toggle(){
+        let blur = document.getElementById("blur");
+        blur.classList.toggle("active")
+        let popup = document.getElementById("popup");
+        popup.classList.toggle("active")
+      }
+    
+   </script>
   </body>
 </html>

@@ -77,7 +77,7 @@ function validate() {
 }
 
 
-$('#button3').click( function() {
+$('#Split').click( function() {
   if (document.getElementById("allTeams").getElementsByTagName('tbody')[0].rows.length<16) {
     alert('Please enter correct number of teams.');
     event.preventDefault();

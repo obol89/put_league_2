@@ -23,6 +23,7 @@ put_team = Storage()
 
 @app.route('/')
 def my_form():
+    put_team.reset()
     return render_template('index.html')
 
 
