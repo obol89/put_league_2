@@ -62,7 +62,7 @@ def get_data_structure(data):
     data.sort_index(inplace=True) 
     data = pd.Series(data.values.ravel('F'))
     first_phase = ['','','','','','A1', 'B2','', 'B1', 'A2','', 'C1', 'D2','', 'D1', 'C2','','','','']
-    second_phase = ['','','','','','','','','Semifinasls','','','','Semifinasls','','','','','','','']
+    second_phase = ['','','','','','','','','Semifinals','','','','Semifinals','','','','','','','']
     final = ['','','','','','','','','','','Final','','','','','','','','','']
     excel = pd.DataFrame({'Groups':data, '1/8':first_phase, '1/4':second_phase,  'final':final})
 
