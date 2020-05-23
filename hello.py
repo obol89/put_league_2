@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template, jsonify, Response
+from flask import Flask, request, render_template, jsonify, send_file
 import pandas as pd
 import backend
 import ast
+import os.path
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -53,13 +54,16 @@ def get_csv():
 
 @app.route('/summary')
 def get_structure():
+    save_file = 'PUT-group.xls'
+    path = '~/put_league_2/static/'
+    fn = os.path.expanduser(path + save_file)
     csv_groups = put_team.stack[0]
     put_team.reset()
     excel = backend.csv_data(csv_groups)
-    excel = backend.get_data_structure(excel)
+    backend.get_data_file(excel)
+    print(fn)
 
-    return Response(excel.to_csv(index=False, header=False), 
-    mimetype="text/csv", headers={"Content-disposition": "attachment; filename=PUT-table_group.csv"})
+    return send_file(fn)
 
 
 if __name__ == '__main__':

@@ -4,6 +4,8 @@ import csv
 import os.path
 import pandas as pd
 import string
+import xlrd
+import xlutils.copy 
 
 
 #def get_teams():
@@ -49,24 +51,34 @@ def csv_data(teams):
     columns = []
     number_of_groups = len(teams)
     for i in range(number_of_groups):
-        columns.append('Group_' + list(string.ascii_uppercase)[i])
+        columns.append(list(string.ascii_uppercase)[i])
     data = pd.DataFrame(columns=columns)
     for group, column in zip(teams, data):
         data[column] = group
         
     return data
 
-def get_data_structure(data):
+def get_data_file(data):
+
+    def write_to_xls(dataframe, row, sheet):
+        for i, j in enumerate(dataframe):
+            sheet.write(row+i, 0, j)
+
+    name_file = 'PUT.xls'
+    save_file = 'PUT-group.xls'
+    path = '~/put_league_2/static/'
+    fn = os.path.expanduser(path + name_file)
     data.loc[-1] = data.columns 
     data.index = data.index + 1 
     data.sort_index(inplace=True) 
-    data = pd.Series(data.values.ravel('F'))
-    first_phase = ['','','','','','A1', 'B2','', 'B1', 'A2','', 'C1', 'D2','', 'D1', 'C2','','','','']
-    second_phase = ['','','','','','','','','Semifinals','','','','Semifinals','','','','','','','']
-    final = ['','','','','','','','','','','Final','','','','','','','','','']
-    excel = pd.DataFrame({'Groups':data, '1/8':first_phase, '1/4':second_phase,  'final':final})
-
-    return excel
+    in_book = xlrd.open_workbook(fn, formatting_info=True)
+    save_book = xlutils.copy.copy(in_book)
+    sheet = save_book.get_sheet(0)
+    write_to_xls(data['A'], 1, sheet)
+    write_to_xls(data['B'], 7, sheet)
+    write_to_xls(data['C'], 13, sheet)
+    write_to_xls(data['D'], 19, sheet)
+    save_book.save(os.path.expanduser(path + save_file))
 
 
 
