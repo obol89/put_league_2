@@ -57,8 +57,8 @@ def get_csv():
 def get_structure():
     csv_groups = put_team.stack[0]
     put_team.reset()
-    # excel = backend.csv_data(csv_groups)
-    excel = backend.csv_creator(csv_groups)
+    excel = backend.csv_data(csv_groups)
+    excel = backend.get_data_structure(excel)
 
     return Response(excel.to_csv(index=False, header=False), mimetype="text/csv", headers={"Content-disposition": "attachment; filename=PUT-table_group.csv"})
 
