@@ -53,21 +53,24 @@ def csv_data(teams):
     data = pd.DataFrame(columns=columns)
     for group, column in zip(teams, data):
         data[column] = group
-        
     return data
 
+
 def get_data_structure(data):
-    data.loc[-1] = data.columns 
-    data.index = data.index + 1 
-    data.sort_index(inplace=True) 
+    data.loc[-1] = data.columns
+    data.index = data.index + 1
+    data.sort_index(inplace=True)
     data = pd.Series(data.values.ravel('F'))
-    first_phase = ['','','','','','A1', 'B2','', 'B1', 'A2','', 'C1', 'D2','', 'D1', 'C2','','','','']
-    second_phase = ['','','','','','','','','Semifinals','','','','Semifinals','','','','','','','']
-    final = ['','','','','','','','','','','Final','','','','','','','','','']
-    excel = pd.DataFrame({'Groups':data, '1/8':first_phase, '1/4':second_phase,  'final':final})
-
+    data = data.tolist()
+    df2 = [x for y in (data[i:i+5] + [''] * (i < len(data) - 2) for i in range(0, len(data), 5)) for x in y]
+    df2.pop()
+    A = ['Group stage', '']
+    A.extend(df2)
+    csv = {'Group stage': A,
+            'break': ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+            'Quarterfinals': ['', 'Quarterfinals', '', 'A1', 'B1', '', '', '', '', 'B1', 'A2', '', '', '', '', 'C1', 'D2', '', '', '', '', 'D1', 'C2', '', ''],
+            'Semifinals': ['', '', '', 'Semifinals', '', '', 'A1/B2', 'B1/A2', '', '', '', '', '', '', '', '', '', '', 'C1/D2', 'D1/C2', '', '', '', '', ''],
+            'Final': ['', '', '', '', '', 'Final', '', '', '', '', '', '', 'A1/B2 - B1/A2', 'C1/D2 - D1/C2', '', '', '', '', '', '', '', '', '', '', ''],
+    }
+    excel = pd.DataFrame(csv, columns=['Group stage', 'break', 'Quarterfinals', 'break', 'Semifinals', 'break', 'Final'])
     return excel
-
-
-
-
