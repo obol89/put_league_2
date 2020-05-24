@@ -77,8 +77,22 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
+#buttonsPop {
+  position: relative;
+  padding: 5px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+#newPopup {
+  left: 120px;
+  position: relative;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+}
 .button4 {
-  width: 100%;
   background: #3D94F6;
   background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
   background-image: -moz-linear-gradient(top, #3D94F6, #1E62D0);
@@ -137,4 +151,19 @@ a {
   opacity: 1;
   transition: 0.5s;
 }
+#popFile, #popHome {
+  width: 100%;
+}
 
+#goHome {
+  position: relative;
+  left: 120px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#buttonPop {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
