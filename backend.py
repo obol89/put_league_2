@@ -45,29 +45,43 @@ def csv_export(teams):
             wr.writerow(line)
 
 
-def csv_data(teams):
-    columns = []
-    number_of_groups = len(teams)
-    for i in range(number_of_groups):
-        columns.append('Group_' + list(string.ascii_uppercase)[i])
-    data = pd.DataFrame(columns=columns)
-    for group, column in zip(teams, data):
-        data[column] = group
-        
-    return data
+# def csv_data(teams):
+#     columns = []
+#     number_of_groups = len(teams)
+#     for i in range(number_of_groups):
+#         columns.append('Group_' + list(string.ascii_uppercase)[i])
+#     data = pd.DataFrame(columns=columns)
+#     for group, column in zip(teams, data):
+#         data[column] = group
+#     return data
 
-def get_data_structure(data):
-    data.loc[-1] = data.columns 
-    data.index = data.index + 1 
-    data.sort_index(inplace=True) 
-    data = pd.Series(data.values.ravel('F'))
-    first_phase = ['','','','','','A1', 'B2','', 'B1', 'A2','', 'C1', 'D2','', 'D1', 'C2','','','','']
-    second_phase = ['','','','','','','','','Semifinals','','','','Semifinals','','','','','','','']
-    final = ['','','','','','','','','','','Final','','','','','','','','','']
-    excel = pd.DataFrame({'Groups':data, '1/8':first_phase, '1/4':second_phase,  'final':final})
 
+# def get_data_structure(data):
+#     data.loc[-1] = data.columns
+#     data.index = data.index + 1
+#     data.sort_index(inplace=True)
+#     data = pd.Series(data.values.ravel('F'))
+#     first_phase = ['','','','','','A1', 'B2','', 'B1', 'A2','', 'C1', 'D2','', 'D1', 'C2','','','','']
+#     second_phase = ['','','','','','','','','Semifinals','','','','Semifinals','','','','','','','']
+#     final = ['','','','','','','','','','','Final','','','','','','','','','']
+#     excel = pd.DataFrame({'Groups':data, '1/8':first_phase, '1/4':second_phase,  'final':final})
+
+#     return excel
+
+#def csv_creator(teams):
+#    tournament_path = "~/tournament.csv"
+#    full_tournament_path = os.path.expanduser(tournament_path)
+#    with open(full_tournament_path, 'w') as tournament:
+#        wr = csv.writer(tournament, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+#        for line in teams:
+#            wr.writerow
+
+def csv_creator(teams):
+    csv = {'Group stage': ['Group stage', '', 'Group A', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group B', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group C', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group D', 'Team1', 'Team1', 'Team1', 'Team1'],
+            'break': ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+            'Quarterfinals': ['', 'Quarterfinals', '', 'A1', 'B1', '', '', '', '', 'B1', 'A2', '', '', '', '', 'C1', 'D2', '', '', '', '', 'D1', 'C2', '', ''],
+            'Semifinals': ['', '', '', 'Semifinals', '', '', 'A1/B2', 'B1/A2', '', '', '', '', '', '', '', '', '', '', 'C1/D2', 'D1/C2', '', '', '', '', ''],
+            'Final': ['', '', '', '', '', 'Final', '', '', '', '', '', '', 'A1/B2 - B1/A2', 'C1/D2 - D1/C2', '', '', '', '', '', '', '', '', '', '', ''],
+    }
+    excel = pd.DataFrame(csv, columns=['Group stage', 'break', 'Quarterfinals', 'break', 'Semifinals', 'break', 'Final'])
     return excel
-
-
-
-

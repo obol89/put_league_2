@@ -47,19 +47,20 @@ def team_sender():
 
     return render_template('teams.html', groups=groups)
 
+
 @app.route('/end')
 def get_csv():
     return render_template('end.html')
+
 
 @app.route('/summary')
 def get_structure():
     csv_groups = put_team.stack[0]
     put_team.reset()
-    excel = backend.csv_data(csv_groups)
-    excel = backend.get_data_structure(excel)
+    # excel = backend.csv_data(csv_groups)
+    excel = backend.csv_creator(csv_groups)
 
-    return Response(excel.to_csv(index=False, header=False), 
-    mimetype="text/csv", headers={"Content-disposition": "attachment; filename=PUT-table_group.csv"})
+    return Response(excel.to_csv(index=False, header=False), mimetype="text/csv", headers={"Content-disposition": "attachment; filename=PUT-table_group.csv"})
 
 
 if __name__ == '__main__':
