@@ -45,15 +45,15 @@ def csv_export(teams):
             wr.writerow(line)
 
 
-# def csv_data(teams):
-#     columns = []
-#     number_of_groups = len(teams)
-#     for i in range(number_of_groups):
-#         columns.append('Group_' + list(string.ascii_uppercase)[i])
-#     data = pd.DataFrame(columns=columns)
-#     for group, column in zip(teams, data):
-#         data[column] = group
-#     return data
+def csv_data(teams):
+    columns = []
+    number_of_groups = len(teams)
+    for i in range(number_of_groups):
+        columns.append('Group_' + list(string.ascii_uppercase)[i])
+    data = pd.DataFrame(columns=columns)
+    for group, column in zip(teams, data):
+        data[column] = group
+    return data
 
 
 # def get_data_structure(data):
@@ -77,7 +77,7 @@ def csv_export(teams):
 #            wr.writerow
 
 def csv_creator(teams):
-    csv = {'Group stage': ['Group stage', '', 'Group A', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group B', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group C', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group D', 'Team1', 'Team1', 'Team1', 'Team1'],
+    csv = {'Group stage': ['Group stage', '', 'Group A', '%s', 'Team1', 'Team1', 'Team1', '', 'Group B', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group C', 'Team1', 'Team1', 'Team1', 'Team1', '', 'Group D', 'Team1', 'Team1', 'Team1', 'Team1'],
             'break': ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
             'Quarterfinals': ['', 'Quarterfinals', '', 'A1', 'B1', '', '', '', '', 'B1', 'A2', '', '', '', '', 'C1', 'D2', '', '', '', '', 'D1', 'C2', '', ''],
             'Semifinals': ['', '', '', 'Semifinals', '', '', 'A1/B2', 'B1/A2', '', '', '', '', '', '', '', '', '', '', 'C1/D2', 'D1/C2', '', '', '', '', ''],
