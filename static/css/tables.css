@@ -34,18 +34,22 @@ th, td {
 .flex1 {
   order: 1;
   align-self: stretch;
+  width: 490px;
 }
 
 .flex2 {
   order: 2;
+  width: 490px;
 }
 
 .flex3 {
   order: 3;
+  width: 490px;
 }
 
 .flex4 {
   order: 4;
+  width: 490px;
 }
 
 .container {
@@ -68,11 +72,9 @@ th, td {
 
 .container .content {
   position: relative;
-  max-width: 800px;
 }
 a {
   position: relative;
-  padding: 5px 20px;
   margin-top: 20px;
   text-decoration: none;
   color: #fff;
@@ -86,7 +88,7 @@ a {
   color: #fff;
 }
 #newPopup {
-  left: 120px;
+  left: 700px;
   position: relative;
   margin-top: 20px;
   text-decoration: none;
@@ -167,3 +169,5 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
+
