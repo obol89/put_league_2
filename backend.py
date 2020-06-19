@@ -6,18 +6,6 @@ import pandas as pd
 import string
 
 
-#def get_teams():
-#    teams = []
-#    new_team = ''
-#    while len(teams) != 16:
-#        new_team = input("Please provide 16 names of teams that will \
-#            participate in the tournament. \
-#                Press eneter to confirm every name.")
-#        teams.append(new_team)
-#    print("You've provided 16 teams. Thank you.")
-#    return teams
-
-
 def get_team_pairs(teams):
     pairs = list(itertools.combinations(teams, 2))
     random.shuffle(pairs)

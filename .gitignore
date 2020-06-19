@@ -7,4 +7,3 @@ pyvenv.cfg
 .vscode
 Flask-Bootcamp-master
 .DS_Store
-__pycache__
