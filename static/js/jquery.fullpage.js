@@ -807,7 +807,7 @@
             //not inside a single normal scroll element anymore?
             if(!isInsideOneNormalScroll && FP.shared.isNormalScrollElement){
                 setMouseHijack(true);
-                
+
                 if(isUsingScrollOverflow){
                     options.scrollOverflowHandler.setIscroll(target, true);
                 }
@@ -1342,7 +1342,7 @@
             //using this prevents from lazyLoading the section that is not yet visible 
             //(only 1 pixel offset is)
             var pixelOffset = 2;
-            
+
             var isTopInView = top + pixelOffset < windowsHeight && top > 0;
             var isBottomInView = bottom > pixelOffset && bottom < windowsHeight;
 

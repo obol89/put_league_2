@@ -92,12 +92,3 @@ $('#Split').click( function() {
         data: {'teams': myJsonString},
       });
     }});
-
-/*
-$('#generate').click( function() {
-            $.getJSON("/update",
-                function(data) {
-                    $("#teams_groups").text(data.groups)
-                });
-            });
-*/

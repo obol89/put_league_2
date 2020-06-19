@@ -1,18 +1,3 @@
-/* @import url(//codepen.io/chrisdothtml/pen/ojLzJK.css); */
-/* button {
-  text-decoration: none;
-}
-button:hover {
-  text-decoration: underline;
-}
-
-a {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-} */
-
 h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
@@ -84,14 +69,6 @@ h2 {
   border-radius: 0px;
   text-decoration: none;
 }
-
-/* .button4-center {
-  position: absolute;
-  right: 49%;
-  top: 80%;
-  float: none;
-  display: flex;
-} */
 
 .input1 {
   height: 45px;
@@ -201,7 +178,7 @@ h2 {
   left: 30px;
   align-items: center;
   justify-content: space-between;
-  
+
 }
 #button5 {
   width: 100%;
