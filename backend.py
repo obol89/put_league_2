@@ -1,7 +1,5 @@
 import itertools
 import random
-import csv
-import os.path
 import pandas as pd
 import string
 
@@ -19,18 +17,6 @@ def get_team_groups(teams, n):
         val = teams[i:i+n]
         if len(val) == n:
             yield tuple(val)
-
-
-def csv_export(teams):
-    tournament_path = "~/tournament.csv"
-    full_tournament_path = os.path.expanduser(tournament_path)
-    # with open(tournament, 'w', newline='') as tournament:
-    #    wr = csv.writer(tournament, quoting=csv.QUOTE_ALL)
-    #    wr.writerow(pairs)
-    with open(full_tournament_path, 'w') as tournament:
-        wr = csv.writer(tournament)
-        for line in teams:
-            wr.writerow(line)
 
 
 def csv_data(teams):
